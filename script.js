@@ -10,15 +10,20 @@ seconds.innerHTML = 60
 
 function comeDownTime(){
   let secondsDown = seconds.innerHTML -= 1
+
   if(secondsDown < 0){
     if(minutes.innerHTML != 0){
       minutes.innerHTML -= 1
     }else{
       minutes.innerHTML -= 0
     }
-    seconds.innerHTML = 59
+    console.log(seconds.innerHTML)
+    if(days.innerHTML == 0 && hours.innerHTML == 0 && minutes.innerHTML == 0 && seconds.innerHTML == 0){
+      
+    }else{
+      seconds.innerHTML = 59
+    }
   }
-
   if(minutes.innerHTML == 0 && seconds.innerHTML == 0){
     if(hours.innerHTML != 0){
       minutes.innerHTML = 60
@@ -43,5 +48,7 @@ function comeDownTime(){
     minutes.innerHTML = 0
     seconds.innerHTML = 0
   }
+
+
 }
 setInterval(comeDownTime, 1000)
